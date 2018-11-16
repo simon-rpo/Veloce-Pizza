@@ -5,18 +5,19 @@ import 'antd/dist/antd.css';
 import logo from './logo.svg';
 import './App.css';
 
-// const Header = styled.span`
-//  fontSize: '32px'
-// `;
-
 class App extends Component {
+
+  componentDidMount = () => {
+    this.props.getAllHotels();
+  };
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <div>
+          <div style={{ padding: '20px' }}>
             <t1 style={{ fontSize: '18px' }}>Pizzeria</t1>
-            <span style={{ fontSize: '42px', fontWeight: 'Bold' }}>Veloce</span>
+            <span style={{ fontSize: '42px', fontWeight: 'Bold' }}>Veloce!</span>
             <span role="img" aria-label="Smile" style={{ fontSize: '72px' }}>
               🍕
           </span>
@@ -24,24 +25,44 @@ class App extends Component {
           <Row gutter={16}>
             <Col span={12}>
               <Card
-                title="Valor Futuro"
                 style={{ width: 300 }}
               >
-                <div style={{ padding: '20px' }}>
-                  <Input placeholder="Valor Inversion" />
-                  <Input placeholder="Tasa" />
-                  <Tag color="blue" style={{ fontSize: '18px' }}>Total Valor Futuro</Tag>
+                <div>
+                  <Tag color="#f50" style={{ fontSize: '20px' }}>Valor Futuro</Tag>
+                  <Input placeholder="Valor Futuro" style={{ margin: '10px' }} />
                 </div>
               </Card>
             </Col>
             <Col span={12}>
               <Card
-                title="Valor Presente"
                 style={{ width: 300 }}
               >
-                <div style={{ padding: '20px' }}>
-                  <Input placeholder="Valor Inversion" />
-                  <Input placeholder="Tasa" />
+                <div>
+                  <Tag color="#2db7f5" style={{ fontSize: '20px' }}>Valor Presente</Tag>
+                  <Input placeholder="Valor Presente" style={{ margin: '10px' }} />
+                </div>
+              </Card>
+            </Col>
+          </Row>
+
+          <Row gutter={16} style={{ padding: '10px' }}>
+            <Col span={12}>
+              <Card
+                style={{ width: 300 }}
+              >
+                <div>
+                  <Tag color="#87d068" style={{ fontSize: '20px' }}>Tasa de Interés</Tag>
+                  <Input placeholder="Tasa de Interés" style={{ margin: '10px' }} />
+                </div>
+              </Card>
+            </Col>
+            <Col span={12}>
+              <Card
+                style={{ width: 300 }}
+              >
+                <div>
+                  <Tag color="#108ee9" style={{ fontSize: '20px' }}>Número de Períodos</Tag>
+                  <Input placeholder="Número de Períodos" style={{ margin: '10px' }} />
                 </div>
               </Card>
             </Col>
@@ -50,7 +71,12 @@ class App extends Component {
           <br />
 
           <div>
-            <Button type="primary">Button</Button>
+            <h1>Inversion Total</h1>
+            <h1>200.000.000$</h1>
+          </div>
+
+          <div>
+            <Button type="primary">Recalcular?</Button>
           </div>
         </header>
       </div >

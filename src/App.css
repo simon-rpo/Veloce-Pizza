@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
+
 .App {
   text-align: center;
 }
@@ -29,4 +31,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+h1 {
+  transform: skew(-2deg) rotate(-2deg);
+  grid-area: text;
+  font-family: 'Concert One', sans-serif;
+  font-size: 10vmin;
+  margin: 0;
+  color: #1d9099;
+  padding: 2px
+  /* text-shadow: 1vmin 1vmin 0 #E79C10, -1vmin -1vmin 0 #D53A33; */
 }
